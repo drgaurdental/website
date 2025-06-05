@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="media.css">
+
+  <style>
+    * {
+      font-family: "Poppins";
+    }
+
+    @media screen and (min-width: 1400px) {
+      .container {
+        max-width: 1700px;
+        width: 100%;
+        padding: 0px 25px;
+      }
+
+      @media screen and (max-width: 1400px) {
+        .container {
+          max-width: 100% !important;
+          width: 100%;
+          padding: 0px 25px;
+        }
+      }
+
+      @media screen and (max-width:768) {
+        .container {
+          max-width: 100%;
+          width: 100%;
+          padding: 0px 15px;
+        }
+      }
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <button class="navbar-toggler navbartoggler-start" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <div class="logo-container">
+                  <img src="assets/logoclinic.jpg" alt="Logo" width="50px">
+                </div>
+              </h5>
+              <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link treat" href="#">Treatment</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Feature</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Specialist</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="logo">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="assets/logoclinic.jpg" alt="Logo" width="50px">
+            </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="nav-list">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item treat position-relative"><a class="nav-link" href="#">Treatment</a>
+                  <div class="treatment position-fixed top-1 start-0 w-100 mt-5">
+  <div class="container">
+    <div class="bg-white shadow rounded-bottom p-4">
+      <div class="row gy-3">
+
+        <!-- Aligner -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/aligners" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Aligner</h6>
+                <p class="mb-0 small text-muted">Smiles come easily with our transparent & removable aligners</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Implants -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/dental-implants" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Implants</h6>
+                <p class="mb-0 small text-muted">Look good and feel better with Dental Implants</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- RCT -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/rct" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >RCT</h6>
+                <p class="mb-0 small text-muted">Our painless RCTs preserve your natural smile</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Smile Makeover -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/smile-makeover" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Smile Makeover</h6>
+                <p class="mb-0 small text-muted">Create your dream smile with customized Smile Makeovers</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Cleaning -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/cleaning" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Cleaning</h6>
+                <p class="mb-0 small text-muted">Get a sparkling smile in just one sitting</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Braces -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/braces" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Braces</h6>
+                <p class="mb-0 small text-muted">Fix bite issues and straighten teeth with braces</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Tooth Extraction -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/tooth-extraction" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Tooth Extraction</h6>
+                <p class="mb-0 small text-muted">Pain-free extractions by expert dentists</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Dentures -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/dentures" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Dentures</h6>
+                <p class="mb-0 small text-muted">Restore missing teeth with custom-fit dentures</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Teeth Whitening -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/teeth-whitening" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Teeth Whitening</h6>
+                <p class="mb-0 small text-muted">Brighten your smile with advanced whitening treatments</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Crown -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/crowns" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Crown</h6>
+                <p class="mb-0 small text-muted">Restore damaged teeth with natural-looking crowns</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Filling -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/filling" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Filling</h6>
+                <p class="mb-0 small text-muted">Treat cavities with long-lasting, tooth-colored fillings</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Kids Dentistry -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="/in/services/kids-dentistry" class="text-decoration-none text-dark">
+            <div class="d-flex align-items-center border rounded p-3 hover-bg-light">
+              <div class=" rounded d-flex justify-content-center align-items-center"
+                style="width: 72px; height: 72px;">
+              </div>
+              <div class="ms-3">
+                <h6 style="color: #64017a;" class="fw-bold  mb-1" >Kids Dentistry</h6>
+                <p class="mb-0 small text-muted">Make dental visits fun and comfortable for kids</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</li>
+                  <li class="nav-item"><a class="nav-link" href="#">Specialist</a></li>
+
+                  <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-btn d-flex">
+            <a class="sign" href="https://forms.gle/7BfuCBcj34D1bKi4A">Book an appointment</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="start-content">
+      <div class="hero-slider-section">
+        <div class="container">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="hero-slide-wrapper">
+                  <div class="hero-text-box">
+                    <h2>Creating Smile With Dr. Saurabh Gaur <span>Since 2014</span></h2>
+                    <div class="hero-register-btn">
+                      <a href="https://forms.gle/7BfuCBcj34D1bKi4A">Explain your symptoms.</a>
+                    </div>
+                  </div>
+                  <div class="hero-image-box">
+                    <img src="assets/single photos.jpeg" alt="Illustration">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero-slide-wrapper">
+                  <div class="hero-text-box">
+                    <h2>Creating Smile EveryDay <span>Since 2014</span></h2>
+                    <div class="hero-register-btn">
+                      <a href="https://forms.gle/7BfuCBcj34D1bKi4A ">Explain your symptoms.</a>
+                    </div>
+                  </div>
+                  <div class="hero-image-box">
+                    <img src="assets/senior.jpeg" alt="Illustration">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero-slide-wrapper">
+                  <div class="hero-text-box">
+                    <h2>Comfort Care Confidence Smile <span>Since 2014</span></h2>
+                    <div class="hero-register-btn">
+                      <a href="https://forms.gle/7BfuCBcj34D1bKi4A">Explain your symptoms.</a>
+                    </div>
+                  </div>
+                  <div class="hero-image-box">
+                    <img src="assets/junior.jpeg" alt="Illustration">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero-slide-wrapper">
+                  <div class="hero-text-box">
+                    <h2>Transforming smiles Enhancing Faces.<span>Since 2014</span></h2>
+                    <div class="hero-register-btn">
+                      <a href="https://forms.gle/7BfuCBcj34D1bKi4A">Explain your symptoms.</a>
+                    </div>
+                  </div>
+                  <div class="hero-image-box">
+                    <img src="assets/Gaurav single.jpeg" alt="Illustration">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clients">
+        <div class="container">
+          <div class="our-client my-5">
+            <div class="client-detail">
+              <h2>Our Doctors</h2>
+              <p>"We’ve provided successful treatment to 25,000+ happy patients."</p>
+            </div>
+            <div class="doctor-intro d-flex ">
+              <div class="membership-card-wrapper">
+                <div class="membership-icon">
+                  <img src="assets/saurabh.jpeg" alt="Membership Icon">
+                </div>
+                <div class="membership-heading">
+                  <h5>Dr Saurabh Gaur</h5>
+                </div>
+                <div class="membership-description">
+                  <p><strong>Bachelor of Dental Surgery</strong></p>
+                  <p>Experience: 12+ year</p>
+                  <p>Founder of Dr Gaur Dental Hospital</p>
+                </div>
+              </div>
+              <div class="membership-card-wrapper">
+                <div class="membership-icon">
+                  <img src="assets/avantika.jpeg" alt="Membership Icon">
+                </div>
+                <div class="membership-heading">
+                  <h5>Dr Avantika Gaur </h5>
+
+                </div>
+                <div class="membership-description">
+                  <p><strong>Bachelor of Dental Surgery</strong></p>
+                  <p>Experience: 11+ year</p>
+                  <p>Co-Founder of Dr Gaur Dental Hospital</p>
+                </div>
+              </div>
+              <div class="membership-card-wrapper">
+                <div class="membership-icon">
+                  <img src="assets/gaurav.jpeg" alt="Membership Icon">
+                </div>
+                <div class="membership-heading">
+                  <h5>Dr Gaurav </h5>
+
+                </div>
+                <div class="membership-description">
+                  <p><strong>Master of Dental Surgery</strong>
+                    (Orthodontic)</p>
+                  <p>Experience: 15+ year</p>
+                  <p>Asst. Professor ,Dept. of orthodontics, NIMS</p>
+                </div>
+              </div>
+            </div>
+            <div class="community my-5">
+              <div class="community-system">
+                <h2>Why Choose Dr. Gaur Dental Hospital?</h2>
+                <p></p>
+              </div>
+              <div class="membership mb-4 ">
+                <div class="membership-section-wrapper">
+                  <div class="membership-card">
+                    <div class="membership-card-wrapper">
+                      
+                      <div class="membership-heading">
+                        <h5>Experienced Dentist</h5>
+                      </div>
+                      <div class="membership-description">
+                        <p>Led by Dr. Saurabh Gaur, practicing since 2014 with a strong reputation for reliable dental
+                          care.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="membership-card">
+                    <div class="membership-card-wrapper">
+                    
+                      <div class="membership-heading">
+                        <h5>Painless & Advanced Treatments</h5>
+                      </div>
+                      <div class="membership-description">
+                        <p>We use the latest tools and gentle techniques to ensure a smooth, stress-free experience.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="membership-card">
+                    <div class="membership-card-wrapper">
+                     
+                      <div class="membership-heading">
+                        <h5>Patient-Centered Approach</h5>
+                      </div>
+                      <div class="membership-description">
+                        <p>Every treatment is customized with personal attention to your comfort and dental goals.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="membership-section-wrapper ">
+                <div class="membership-card">
+                  <div class="membership-card-wrapper">
+                   
+                    <div class="membership-heading">
+                      <h5>Clean & Safe Environment</h5>
+                    </div>
+                    <div class="membership-description">
+                      <p>We follow strict hygiene and sterilization protocols for your safety and peace of mind.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="membership-card">
+                  <div class="membership-card-wrapper">
+                   
+                    <div class="membership-heading">
+                      <h5>Affordable, Quality Care</h5>
+                    </div>
+                    <div class="membership-description">
+                      <p>High-standard dental services that fit your budget—because everyone deserves a healthy smile.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="membership-card">
+                  <div class="membership-card-wrapper">
+                   
+                    <div class="membership-heading">
+                      <h5>Comprehensive Dental Services</h5>
+                    </div>
+                    <div class="membership-description">
+                      <p>From preventive checkups to cosmetic dentistry and advanced procedures—all under one roof.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="middle-content">
+        <div class="container">
+          <div class="pixelgrade my-5">
+            <div class="grade-img">
+              <img src="assets/saurabh profile (3).jpeg" alt="">
+            </div>
+            <div class="grade-detail">
+              <h2>Dr. Saurabh Gaur BDS,<br> Dental Surgeon | Founder – Dr. Gaur Dental Hospital</h2>
+              <p>Dr. Saurabh Gaur is a dedicated and experienced dental surgeon committed to delivering high-quality
+                oral care with compassion and precision. Practicing since 2014, he has earned the trust of hundreds of
+                patients in Behror and nearby areas. His expertise ranges from preventive dentistry to advanced
+                procedures like root canals, smile designing, and full-mouth rehabilitation.With a patient-first
+                approach, Dr. Gaur ensures every treatment is comfortable, hygienic, and customized to individual needs.
+                His clinic is equipped with modern dental technology, and his calm, friendly demeanor makes dental
+                visits stress-free for patients of all ages.</p>
+              <p>Dr. Saurabh Gaur is not only a skilled dentist but also a passionate social activist committed to
+                uplifting his community. Beyond his medical practice, he actively participates in social initiatives
+                focused on health awareness, hygiene education, and community welfare. He frequently organizes free
+                dental check-up camps, especially for underprivileged groups, and works to spread awareness about the
+                importance of oral health. Driven by a sense of social responsibility, Dr. Gaur believes in giving back
+                to society and uses his platform to inspire positive change. His efforts reflect a deep commitment to
+                both professional excellence and social impact.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="pixelgrade my-5">
+            <div class="grade-img">
+              <img src="assets/avantika profile.jpeg" alt="">
+            </div>
+            <div class="grade-detail">
+              <h2> Dr. Avantika Gaur, BDS<br> Dental Surgeon | Co- Founder – Dr. Gaur Dental Hospital</h2>
+              <p>Dr. Avantika Gaur is a highly skilled and compassionate dental surgeon with over 11 years of experience
+                in delivering exceptional oral healthcare. Known for her gentle approach and meticulous attention to
+                detail, she has successfully treated a wide range of dental conditions, earning the trust of countless
+                patients across Behror and surrounding regions. Her expertise covers preventive care, cosmetic
+                dentistry, root canal treatments, smile makeovers, and full-mouth rehabilitation. Dr. Avantika believes
+                in a patient-centric philosophy, ensuring that every treatment is comfortable, hygienic, and tailored to
+                each individual's needs. With a modern, well-equipped clinic and a warm, approachable demeanor, she
+                makes every dental visit a positive and stress-free experience for patients of all ages.</p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="pixelgrade my-5">
+            <div class="grade-img">
+              <img src="assets/gaurav profile (2).jpeg" alt="">
+            </div>
+            <div class="grade-detail">
+              <h2> Dr. Gaurav Arya, BDS, MDS (Orthodontics)<br> Assistant Professor – Department of Orthodontics, NIMS
+                University, Jaipur</h2>
+              <p>Dr. Gaurav Arya is a skilled and passionate orthodontist with a strong academic and clinical background
+                in orthodontics and dentofacial orthopedics. As a Life Member of the Indian Orthodontic Society, he
+                combines academic rigor with a hands-on approach to patient care. Dr. Arya is known for his precision in
+                correcting dental and jaw irregularities, offering treatments like braces, aligners, and growth
+                modulation therapies. Currently serving as an Assistant Professor at NIMS University, Jaipur, he plays a
+                key role in shaping future dental professionals while maintaining his commitment to patient-focused
+                care. With a deep understanding of facial aesthetics and occlusion, Dr. Arya delivers results that
+                enhance both function and confidence.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="associations my-5">
+          <div class="container">
+            <div class="association-detail ">
+              <h2 class="mb-3">Dental Check-up Camps</h2>
+              <div class="camp-img">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="govt"><img src="assets/camp.jpeg" alt="" class="img-fluid"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="school"><img src="assets/camp main.jpeg" alt="" class="img-fluid"> </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="govt"><img src="assets/camp site.jpeg" alt="" class="img-fluid"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="school"><img src="assets/donate.jpeg" alt="" class="img-fluid"> </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="helping-section my-5 py-5">
+          <div class="container">
+            <div class="clinic-faclities">
+              <h2>Clinic Facilities</h2>
+            </div>
+            <div class="row align-items-center  ">
+              <div class="col-md-6 d-flex">
+                <div class="swiper clinic-swiper-container">
+    <div class="clinic-wrapper swiper-wrapper">
+      <div class="clinic-slide swiper-slide">
+        <img src="assets/clinic.jpeg" alt="Slide 1" />
+      </div>
+      <div class="clinic-slide swiper-slide">
+        <img src="assets/dental-hospital.jpeg" alt="Slide 2"  class="img-fluid"/>
+      </div>
+      <div class="clinic-slide swiper-slide">
+        <img src="assets/achievment.jpeg" alt="Slide 3" />
+      </div>
+    </div>
+  </div>
+                </div>
+
+              <div class="col-md-6">
+                <div class="clinic-topic">
+                  <h2>Fully Air-Conditioned Dental Cabin</h2>
+                  <p>Comfortable and hygienic treatment space designed for patient ease.</p>
+                  <h2>Clean & Peaceful Environment</h2>
+                  <p>Maintained with high standards of cleanliness for a stress-free experience.</p>
+                  <h2>Advanced Dental Equipment</h2>
+                  <p>Modern tools for precise, efficient, and painless dental procedures.</p>
+                  <h2>Digital X-Ray & Imaging</h2>
+                  <p>Fast, safe diagnostics using low-radiation digital technology.</p>
+                  <h2>WhatsApp Consultation & Easy Booking</h2>
+                  <p>Convenient online consultations and quick appointment scheduling.</p>
+                  <h2>RF cautery</h2>
+                  <p>A gentle and precise treatment for oral lesion </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="new-marketing my-5">
+          <div class="container">
+            <div class="caring-portion">
+              <h2>Nurturing Young Smiles <br> Professional Approaches to Child Dental Care</h2>
+              <p>From first tooth to adolescence, our professional focus is on building trust, promoting education, and
+                preventing dental issues before they start.​</p>
+            </div>
+            <div class="portion-detail d-flex">
+              <div class="safegaurd">
+                <img src="assets/kids.jpeg" alt="">
+                <div class="safe-detail">
+                  <p><strong>Painless Extractions</strong></p>
+                  <p>Gentle removal of teeth with techniques to minimize discomfort and anxiety in children.
+                  </p>
+                </div>
+              </div>
+              <div class="safegaurd">
+                <img src="assets/kids 1.jpeg" alt="">
+                <div class="safe-detail">
+                  <p><strong>Tooth-Colored Restorations
+                    </strong></p>
+                  <p>Aesthetic fillings that blend naturally with the child's teeth, ideal for treating cavities.
+                  </p>
+                </div>
+              </div>
+              <div class="safegaurd">
+                <img src="assets/kid2.jpeg" alt="">
+                <div class="safe-detail">
+                  <p><strong>Smile Correction</strong></p>
+                  <p>Treatment plans to correct alignment issues and enhance the child’s smile.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="custom-swiper-container">
+            <h2 class="teeth">Healthy Teeth, Happy Smiles</h2>
+            <div class="swiper-wrapper">
+              <div class="custom-swiper-slide swiper-slide"><img
+                  src="assets/WhatsApp Image 2025-05-28 at 16.36.05 (1).jpeg" alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.35.59.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.00.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img
+                  src="assets/WhatsApp Image 2025-05-28 at 16.36.01 (1).jpeg" alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.01.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.02.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.03.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img
+                  src="assets/WhatsApp Image 2025-05-28 at 16.36.04 (1).jpeg" alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img
+                  src="assets/WhatsApp Image 2025-05-28 at 16.36.05 (1).jpeg" alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.05.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.09.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img
+                  src="assets/WhatsApp Image 2025-05-28 at 16.36.10 (1).jpeg" alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.10.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.11.jpeg"
+                  alt=""></div>
+              <div class="custom-swiper-slide swiper-slide"><img src="assets/WhatsApp Image 2025-05-28 at 16.36.15.jpeg"
+                  alt=""></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="end">
+        <div class="container">
+          <div class="demo">
+            <h2>Join over 1 lakh people who choose better dental care.</h2>
+            <div class="demo-btn">
+              <a href="https://forms.gle/7BfuCBcj34D1bKi4A">Book an appointment <span class="px-2"><i
+                    class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+     <footer class=" text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h6 class="mb-3">Our Location</h6>
+            <div class="map-responsive">
+             <iframe
+  src="https://maps.google.com/maps?q=27.8919902,76.2789896&z=15&output=embed"
+  width="100%"
+  height="200"
+  style="border:0;"
+  allowfullscreen
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center"
+            style="height: 200px"
+          >
+            <div>
+              <h6 class="mb-3">Contact Us</h6>
+              <ul class="list-unstyled fs-4">
+                <li><span class="fw-bold">Name:</span> Dr Saurabh Gaur</li>
+                <li><span class="fw-bold">Email:</span> drgaurdentalhospital@gmail.com</li>
+                <li><span class="fw-bold">Phone:</span> 9799353531</li>
+              </ul>
+
+              <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="https://www.facebook.com/share/1BsV8FuEVj/" class="text-white"
+                  ><i class="fab fa-facebook fa-lg"></i
+                ></a>
+                <a href="https://www.instagram.com/drgaurdentalhospital?igsh=MWoweThyM3ZycHRydw==" class="text-white"
+                  ><i class="fab fa-instagram fa-lg"></i
+                ></a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: true,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+    </script>
+    <script>
+      var swiper = new Swiper(".custom-swiper-container", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: ".custom-swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        },
+      });
+    </script>
+  <script>
+    var swiper = new Swiper(".clinic-swiper-container", {
+      wrapperClass: "clinic-wrapper",
+      slideClass: "clinic-slide",
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+    });
+  </script>
+</body>
+
+</html>

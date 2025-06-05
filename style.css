@@ -1,0 +1,605 @@
+.header {
+    background-color: #64017ad2;
+  }
+  .hover-bg-light:hover {
+  background-color: #64017a;
+}
+
+  .header .nav-list li a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffb100 !important;
+    padding: 25px;
+  }
+  
+  .header .navbar-menu .nav-list {
+    margin-right: 90px;
+    color: #ffb100 !important;
+  }
+  
+  .header .navbar-btn .nav-link {
+    color: #ffb100;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  
+  .header .navbar-btn .sign {
+    background-color:#ffb100 ;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  
+  .start-content .hero-slider-section {
+    background-color: #64017ad2;
+  }
+  
+  .start-content .hero-slider-section .hero-slide-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 37.5px;
+   align-items: center; 
+  }
+  
+  .start-content .hero-slider-section .hero-text-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .start-content .hero-text-box h2 {
+    font-size: 64px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .start-content .hero-text-box h2 span {
+    color:  #ffb100;
+  }
+  
+  .start-content .hero-text-box p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #717171;
+  }
+  
+  .hero-register-btn {
+    background-color: #ffb100;
+    border-radius: 6px;
+    width: 220px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  
+  .hero-register-btn a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hero-image-box {
+    margin: 90px 20px;
+    width: 550px;
+    height: 450px;
+  }
+  .hero-image-box img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;  
+  }
+  
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    width: 10px;
+    height: 10px;
+    background: #ffb100 !important;
+  }
+  
+  .clients .our-client,
+  .clients .community {
+    padding: 15px 0;
+  }
+  
+  .clients .our-client .client-detail h2,
+  .clients .community .community-system h2 {
+    font-weight: 600;
+    font-size: 36px !important;
+    line-height: 44px;
+    text-align: center;
+    color: #ffb100;
+  }
+  
+  .clients .our-client .client-detail p,
+  .clients .community .community-system p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .clients .our-client .client-detail p {
+    color: #ffb100;
+  }
+  
+  .clients .community .community-system p {
+    color: #717171;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .clients .our-client .client-logo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .membership-heading h5 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #ffb100;
+  }
+  
+  .membership-description p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .pixelgrade {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+  }
+  
+  .grade-detail {
+    max-width: 661px;
+  }
+  
+  .grade-detail h2 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #64017a;
+  }
+  
+  .grade-detail p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffb100;
+    /* padding: 16px 0; */
+  }
+  
+  .grade-detail .learn {
+    margin-top: 33px;
+  }
+  
+  .grade-detail .learn a {
+    background-color: #4caf4f;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .community {
+    text-align: center;
+  }
+  
+  .membership-section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .membership-card {
+    max-width: 400px;
+  }
+  
+  .membership-card-wrapper {
+    background-color: #64017ad2;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+  }
+  
+  .membership-icon {
+    margin: 1rem auto;
+    width: 70px;
+    /* height:76px; */
+    
+  }
+  .membership-icon img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .helping-section {
+    background-color: #f5f7fa;
+  }
+  
+  .helping-section .local-head h2,
+  .helping-section .local-head h3,
+  .clinic-faclities h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 34px;
+    color: #64017a;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .helping-section .local-head h2 {
+    color: #ffb100;
+  }
+  
+  .helping-section .local-head h3 {
+    color: #4caf4f;
+  }
+  
+  .helping-section .local-head p {
+    color: #18191f;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .helping-section .icon img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .helping-section .stat-text h3 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    color: #ffb100;
+    margin: 0;
+  }
+  
+  .helping-section .stat-text p {
+    font-size: 14px;
+    color: #717171;
+    margin: 0;
+  }
+  
+  /* .associations {
+    justify-content: space-between;
+    background-color: #f5f7fa;
+  }
+  
+  .association-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+  }
+  
+  .smith-icon {
+    padding-right: 35px;
+  }
+  
+  .smith-detail {
+    padding-left: 35px;
+    text-align: justify;
+  }
+  
+  .smith-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+  }
+  
+  .smith-logo span a,
+  .smith-detail h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #4caf4f;
+    text-decoration: none;
+  }
+  
+  .smith-detail p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #717171;
+  }
+  
+  .smith-detail h4 {
+    padding: 16px 0 8px;
+  }
+   */
+  .new-marketing {
+    padding: 15px 0;
+  }
+  
+  .portion-detail {
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  
+  .caring-portion {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .caring-portion h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #64017a;
+  }
+  
+  .caring-portion p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffb100;
+    max-width: 728px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .grade-img{
+    width: 350px;
+    height: 500px;
+    }
+  .grade-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .safegaurd {
+    position: relative;
+    width: 400px;
+    height: 250px;
+  }
+  .safegaurd img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .safe-detail {
+    position: absolute;
+    bottom: -70px;
+    left: 25px;
+    width: 317px;
+    height: 155px;
+        background-color: #f5f7fa;
+    box-shadow: 0 8px 16px rgba(171, 190, 209, 0.4);
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .safe-detail p {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+    color: #717171;
+  }
+  
+  .safe-detail a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #4caf4f;
+  }
+  
+  .end {
+    background-color: #f5f7fa;
+    margin-top: 35px;
+  }
+  
+  .demo {
+    padding: 32px 0;
+    text-align: center;
+  }
+  
+  .demo h2 {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 76px;
+    color: #64017a;
+  }
+  
+  .demo-btn {
+    margin-top: 50px;
+  }
+  
+  .demo-btn a {
+    background-color: #ffb100;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .demo-btn a:hover{
+    color: white;
+  }
+  
+  footer{
+    padding: 60px 0;
+    background-color: #64017ad2 !important;
+  }
+  
+  .footer h5 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .footer a,
+  .social-icons a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  .footer a:hover,
+  .social-icons a:hover {
+    color: #fff;
+  }
+  
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 20px;
+  }
+  
+  .email-input {
+    background-color: #3b4b57;
+    border: none;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .send-icon {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  
+  .footer-wrapper h5 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #f5f7fa;
+  }
+  
+  .footer-wrapper p,
+  .footer-wrapper a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f5f7fa;
+  }
+  
+  .footer-wrapper p {
+    padding: 40px 0;
+  }
+  
+  .footer-wrapper li {
+    margin-bottom: 12px;
+  }
+  
+  .inputs-field {
+    position: relative;
+  }
+  
+  .inputs-field input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #3b4b57;
+    color: white;
+  }
+  .swiper-pagination-bullet, .swiper-pagination-bullet-active {
+    width: 10px;
+    height: 10px;
+    background: #4caf4f;
+}
+.treatment {
+  display: none;
+  z-index: 9999;
+}
+
+.treat:hover .treatment {
+  display: block;
+}
+.doctor-intro{
+  gap: 20px;
+}
+
+.swiper-pagination-bullets-active{
+  color: #ffb100 !important;
+}
+.association-detail h2{
+      font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #ffb100;
+}
+.clinic-topic h2{
+font-weight: 600;
+    font-size: 18px;
+    line-height: 34px;
+    color: #64017a;
+}
+.clinic-topic p{
+      font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffb100;
+    /* padding: 16px 0; */
+}
+.custom-swiper-container{
+  overflow: hidden;
+}
+.custom-swiper-slide{
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+.custom-swiper-slide img{
+  width: 100%;
+  height: 100%;
+}
+.teeth{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 34px;
+    color: #64017a;
+    text-align: center;
+    margin: 20px 0;
+}
+.clinic-slide{
+width: 500px;
+height: 400px;
+}
+.clinic-slide img{
+  width: 100%;
+  height: 100%;
+   object-fit: cover;
+    border-radius: 15px;
+}
+.contact-section {
+  max-width: 500px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-left: 4px solid #007bff;
+}
+
+.contact-details li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
