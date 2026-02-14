@@ -296,6 +296,9 @@
     .doctor-intro{
         flex-direction: column;
     }
+    .clinic-play{
+        display: block;
+    }
 }
 
 /* 576px - 767px */
