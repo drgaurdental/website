@@ -79,9 +79,11 @@ export default function DoctorsPage() {
                 ))}
               </ul>
 
-              <Link href="/contact#book" className="btn-primary mt-8">
-                <CalendarCheck className="size-5" aria-hidden /> Book with {d.name}
-              </Link>
+              {d.bookable !== false && (
+                <Link href="/contact#book" className="btn-primary mt-8">
+                  <CalendarCheck className="size-5" aria-hidden /> Book with {d.name}
+                </Link>
+              )}
             </div>
           </section>
         ))}

@@ -22,7 +22,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-brand-200">
-            {site.tagline}. Trusted family dental care in {site.address.locality} since {site.foundedYear} — root canals,
+            {site.tagline}. {site.accreditation.full}, trusted for family dental care since {site.foundedYear} — root canals,
             implants, braces, cosmetic and children&apos;s dentistry under one roof.
           </p>
           <div className="mt-6 flex gap-3">

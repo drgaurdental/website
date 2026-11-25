@@ -15,6 +15,8 @@ export type Doctor = {
   portrait: StaticImageData;
   clinicPhoto: StaticImageData;
   highlights: string[];
+  /** Set to false to hide the "Book with …" button on the doctors page. */
+  bookable?: boolean;
   expertise: string[];
   bio: string[];
 };
@@ -32,7 +34,6 @@ export const doctors: Doctor[] = [
       "Certified Rotary Endodontist",
       "Certified Implantologist",
       "Ex-Surgeon, ECHS Panel Dental Hospital (Kosli)",
-      "Ex-Surgeon, City Dental Clinic (Haryana)",
     ],
     expertise: ["Root canal treatment", "Dental implants", "Crowns & bridges", "Full-mouth rehabilitation", "Smile design"],
     bio: [
@@ -59,6 +60,7 @@ export const doctors: Doctor[] = [
   },
   {
     slug: "dr-gaurav-arya",
+    bookable: false,
     name: "Dr. Gaurav Arya",
     qualifications: "BDS, MDS (Orthodontics)",
     role: "Consultant Orthodontist",

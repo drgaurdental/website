@@ -21,6 +21,7 @@ export function dentistSchema() {
     telephone: site.phone,
     email: site.email,
     foundingDate: String(site.foundedYear),
+    award: `${site.accreditation.full} (Quality Council of India)`,
     address: {
       "@type": "PostalAddress",
       ...(site.address.street ? { streetAddress: site.address.street } : {}),

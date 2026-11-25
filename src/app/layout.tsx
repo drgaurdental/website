@@ -23,7 +23,7 @@ const devanagari = Noto_Sans_Devanagari({
 });
 
 const description =
-  "Dr. Gaur Dental Hospital, Behror — trusted dentist since 2014. Painless root canal, dental implants, braces & aligners, crowns, dentures, teeth cleaning and kids dentistry. Call +91 97993 53531.";
+  "Dr. Gaur Dental Hospital — Behror's first QCI-certified dental clinic, trusted since 2014. Painless root canal, dental implants, braces & aligners, crowns, dentures, teeth cleaning and kids dentistry. Call +91 97993 53531.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     "dentist in Behror",
     "dental hospital Behror",
     "best dentist Behror",
+    "QCI certified dental clinic Behror",
     "root canal treatment Behror",
     "dental implants Behror",
     "braces Behror",

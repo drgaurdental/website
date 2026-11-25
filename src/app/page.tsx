@@ -79,7 +79,7 @@ const whyUs = [
   { icon: Award, title: `${yearsSince(site.foundedYear)}+ years of trust`, text: "Caring for Behror's smiles since 2014, led by Dr. Saurabh Gaur." },
   { icon: Zap, title: "Painless, modern treatment", text: "Rotary endodontics, effective anaesthesia and gentle techniques." },
   { icon: BadgeCheck, title: "Specialist team", text: "Certified endodontist & implantologist, plus an MDS orthodontist." },
-  { icon: ShieldCheck, title: "Strict sterilisation", text: "Hospital-grade hygiene and sterilisation protocols for every patient." },
+  { icon: ShieldCheck, title: "QCI certified — 1st in Behror", text: "Behror's first dental clinic certified by the Quality Council of India, with strict hygiene and sterilisation for every patient." },
   { icon: Wallet, title: "Honest, affordable pricing", text: "Clear treatment plans and costs explained before we begin." },
   { icon: Siren, title: "24-hour emergency", text: "Severe pain, swelling or a broken tooth? Call us any time." },
 ];
@@ -130,7 +130,7 @@ export default function HomePage() {
               </a>
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-700">
-              {["Certified Rotary Endodontist", "MDS Orthodontist", "24-hour emergency"].map((t) => (
+              {[site.accreditation.full, "Certified Rotary Endodontist", "MDS Orthodontist", "24-hour emergency"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <CheckCircle2 className="size-5 text-mint-500" aria-hidden /> {t}
                 </li>
@@ -181,7 +181,7 @@ export default function HomePage() {
           {[
             ["Since 2014", "Serving Behror"],
             [site.patientsTreated, "Patients treated"],
-            ["12+", "Dental treatments"],
+            ["QCI", "1st certified clinic in Behror"],
             ["24 hrs", "Emergency support"],
           ].map(([value, label]) => (
             <div key={label}>

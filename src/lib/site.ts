@@ -10,6 +10,11 @@ export const site = {
   url: "https://www.drgaurdental.com",
   foundedYear: 2014,
   patientsTreated: "25,000+",
+  // Quality Council of India certification — confirmed by the clinic.
+  accreditation: {
+    short: "QCI certified",
+    full: "Behror's first QCI-certified dental clinic",
+  },
 
   phone: "+91 97993 53531",
   phoneHref: "tel:+919799353531",
