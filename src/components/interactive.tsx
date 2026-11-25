@@ -147,6 +147,12 @@ export function GalleryGrid({ images, columns = "sm:grid-cols-2 lg:grid-cols-3" 
  * Appointment request form. No backend needed: it builds a WhatsApp message
  * with the patient's details and opens WhatsApp to send it to the clinic.
  */
+/** Today's date in the visitor's time zone, as YYYY-MM-DD (the format date inputs use). */
+function todayISO() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 export function BookingForm({ treatments }: { treatments: { slug: string; name: string }[] }) {
   const [error, setError] = useState("");
 
@@ -159,13 +165,19 @@ export function BookingForm({ treatments }: { treatments: { slug: string; name: 
       setError("Please enter your name and a valid 10-digit phone number.");
       return;
     }
+    const date = String(data.get("date") || "");
+    // Plain string comparison works for YYYY-MM-DD. Checked here too because some browsers let you type a past date.
+    if (date && date < todayISO()) {
+      setError("Please choose today or a future date.");
+      return;
+    }
     setError("");
     const lines = [
       "Hello Dr. Gaur Dental Hospital, I would like to book an appointment.",
       `Name: ${name}`,
       `Phone: ${phone}`,
       data.get("treatment") ? `Treatment: ${data.get("treatment")}` : "",
-      data.get("date") ? `Preferred date: ${data.get("date")}` : "",
+      date ? `Preferred date: ${date.split("-").reverse().join("/")}` : "",
       data.get("time") ? `Preferred time: ${data.get("time")}` : "",
       data.get("message") ? `Details: ${data.get("message")}` : "",
     ].filter(Boolean);
@@ -198,7 +210,15 @@ export function BookingForm({ treatments }: { treatments: { slug: string; name: 
       </label>
       <label className="block text-sm font-medium text-slate-700">
         Preferred date
-        <input name="date" type="date" className={field} />
+        <input
+          name="date"
+          type="date"
+          // Set in the browser: the page is pre-rendered, so "today" must come from the visitor's clock.
+          ref={(el) => {
+            if (el) el.min = todayISO();
+          }}
+          className={field}
+        />
       </label>
       <label className="block text-sm font-medium text-slate-700">
         Preferred time
