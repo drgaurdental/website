@@ -54,7 +54,7 @@ export function dentistSchema() {
     ].map((name) => ({ "@type": "MedicalProcedure", name })),
     founder: { "@id": absoluteUrl("/doctors#dr-saurabh-gaur") },
     employee: doctors.map((d) => ({ "@id": absoluteUrl(`/doctors#${d.slug}`) })),
-    sameAs: [site.social.facebook, site.social.instagram],
+    sameAs: [site.googleBusinessUrl, site.social.facebook, site.social.instagram],
   };
 }
 

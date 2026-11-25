@@ -1,0 +1,20 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: drgaurdental-website
+    runtime: node
+    plan: free
+    branch: refactor
+    # --include=dev: Tailwind and TypeScript are needed at build time.
+    buildCommand: npm install --include=dev && npm run build
+    # `next start` reads Render's PORT env var automatically.
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+    domains:
+      - www.drgaurdental.com

@@ -18,19 +18,22 @@ export const site = {
   bookingFormUrl: "https://forms.gle/7BfuCBcj34D1bKi4A",
 
   address: {
-    // TODO: add the exact street / landmark (e.g. "Near …, Main Road") — it strongly helps local search.
-    street: "",
+    // Keep this identical to the Google Business Profile address.
+    street: "Meero Ka Mohalla, Ganpati Nagar, Hamidpur Road",
+    landmark: "Near Govt. Hospital & Dr Lal PathLabs",
     locality: "Behror",
     district: "Kotputli-Behror",
     region: "Rajasthan",
     postalCode: "301701",
     country: "IN",
   },
-  geo: { lat: 27.8919902, lng: 76.2789896 },
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=27.8919902,76.2789896",
-  mapsEmbedUrl: "https://maps.google.com/maps?q=27.8919902,76.2789896&z=15&output=embed",
+  // Coordinates and place ID (cid) taken from the clinic's Google Business Profile.
+  geo: { lat: 27.8919874, lng: 76.2790713 },
+  googleBusinessUrl: "https://maps.google.com/?cid=10157230845535850648",
+  mapsUrl: "https://maps.google.com/?cid=10157230845535850648",
+  mapsEmbedUrl: "https://maps.google.com/maps?q=Dr+Gaur+Dental+Hospital,+Behror&ll=27.8919874,76.2790713&z=16&output=embed",
 
-  // From the clinic signboard. TODO: confirm which days the clinic is open.
+  // Confirmed by the clinic: open all 7 days, 24-hour emergency service.
   hours: {
     days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     label: "Every day",
@@ -51,6 +54,7 @@ export const site = {
 
 export const fullAddress = [
   site.address.street,
+  site.address.landmark,
   site.address.locality,
   `${site.address.district} district`,
   `${site.address.region} ${site.address.postalCode}`,
