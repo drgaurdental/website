@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import { PlayCircle } from "lucide-react";
-import { smileCases, surgicalCases, clinicPhotos, campPhotos } from "@/lib/gallery";
+import { smileCases, surgicalCases, clinicPhotos, campPhotos, kidsPhotos } from "@/lib/gallery";
 import { site } from "@/lib/site";
 import { absoluteUrl } from "@/lib/schema";
 import { CtaBand, JsonLd, PageHero, SectionHeading } from "@/components/ui";
@@ -10,7 +10,7 @@ import { GalleryGrid } from "@/components/interactive";
 export const metadata: Metadata = pageMeta({
   title: "Smile Gallery — Before & After Dental Results",
   description:
-    "Real before-and-after results from Dr. Gaur Dental Hospital, Behror: zirconia crowns, bridges, smile makeovers, wisdom tooth removal, plus photos of our clinic and free dental camps.",
+    "Real before-and-after results from Dr. Gaur Dental Hospital, Behror: zirconia crowns, bridges, smile makeovers, wisdom tooth removal, plus photos of our clinic, young patients and free dental camps.",
   path: "/gallery",
 });
 
@@ -64,6 +64,7 @@ export default function GalleryPage() {
             ["#videos", "Videos"],
             ["#clinic", "Our clinic"],
             ["#camps", "Dental camps"],
+            ["#kids", "Little smiles"],
           ].map(([href, label]) => (
             <a key={href} href={href} className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20">
               {label}
@@ -129,6 +130,15 @@ export default function GalleryPage() {
           <SectionHeading eyebrow="Community" title="Free dental check-up camps" intro="Spreading oral-health awareness in schools and villages around Behror." />
           <div className="mt-12">
             <GalleryGrid images={campPhotos} />
+          </div>
+        </div>
+      </section>
+
+      <section id="kids" className="section bg-brand-50/60">
+        <div className="container-page">
+          <SectionHeading eyebrow="Kids dentistry" title="Little smiles" intro="Gentle, friendly care that helps children feel at ease in the dental chair." />
+          <div className="mt-12">
+            <GalleryGrid images={kidsPhotos} columns="sm:grid-cols-2 lg:grid-cols-4" />
           </div>
         </div>
       </section>

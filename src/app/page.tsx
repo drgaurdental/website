@@ -23,9 +23,9 @@ import {
   Zap,
 } from "lucide-react";
 
-import heroImg from "@/images/clinic/treatment-room.webp";
+import heroImg from "@/images/clinic/operatory-1.webp";
 import exterior from "@/images/clinic/exterior-signboard.webp";
-import op1 from "@/images/clinic/operatory-1.webp";
+import op1 from "@/images/clinic/treatment-room.webp";
 import waiting from "@/images/clinic/waiting-area.webp";
 import kids1 from "@/images/kids/kids-1.webp";
 import kids2 from "@/images/kids/kids-2.webp";
@@ -38,7 +38,7 @@ import { smileCases, campPhotos } from "@/lib/gallery";
 import { faqSchema } from "@/lib/schema";
 import { CtaBand, Faq, JsonLd, SectionHeading, TreatmentCard } from "@/components/ui";
 import { WhatsAppIcon, ToothIcon } from "@/components/icons";
-import { MapEmbed } from "@/components/interactive";
+import { AutoScrollRow, MapEmbed } from "@/components/interactive";
 
 export const metadata: Metadata = pageMeta({
   title: "Dr. Gaur Dental Hospital | Best Dentist in Behror, Rajasthan",
@@ -104,6 +104,17 @@ export default function HomePage() {
         <div aria-hidden className="absolute -left-20 top-60 size-80 rounded-full bg-gold-200/40 blur-3xl" />
         <div className="container-page relative grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1.05fr_1fr] lg:py-20">
           <div className="animate-fade-up">
+            <div className="mb-5">
+              <p className="inline-flex items-center gap-3 rounded-2xl border border-gold-300 bg-gradient-to-r from-gold-100 via-gold-100/60 to-white py-2 pl-2 pr-5 shadow-md shadow-gold-500/10">
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 text-brand-950 shadow">
+                  <BadgeCheck className="size-6" aria-hidden />
+                </span>
+                <span className="leading-tight">
+                  <span className="block text-sm font-extrabold uppercase tracking-wide text-brand-900">{site.accreditation.short}</span>
+                  <span className="block text-xs font-semibold text-slate-600">{site.accreditation.full}</span>
+                </span>
+              </p>
+            </div>
             <p className="eyebrow">
               <ToothIcon className="size-4" /> {site.tagline} · Since {site.foundedYear}
             </p>
@@ -130,7 +141,7 @@ export default function HomePage() {
               </a>
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-700">
-              {[site.accreditation.full, "Certified Rotary Endodontist", "MDS Orthodontist", "24-hour emergency"].map((t) => (
+              {["Certified Rotary Endodontist", "MDS Orthodontist", "24-hour emergency"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <CheckCircle2 className="size-5 text-mint-500" aria-hidden /> {t}
                 </li>
@@ -181,7 +192,7 @@ export default function HomePage() {
           {[
             ["Since 2014", "Serving Behror"],
             [site.patientsTreated, "Patients treated"],
-            ["QCI", "1st certified clinic in Behror"],
+            ["12+", "Dental treatments"],
             ["24 hrs", "Emergency support"],
           ].map(([value, label]) => (
             <div key={label}>
@@ -191,6 +202,30 @@ export default function HomePage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/* ───────── QCI CERTIFICATION ───────── */}
+      <section aria-labelledby="qci-heading" className="relative overflow-hidden bg-brand-900 text-white">
+        <div aria-hidden className="absolute -left-20 -top-24 size-72 rounded-full bg-gold-400/15 blur-3xl" />
+        <div aria-hidden className="absolute -bottom-24 right-0 size-80 rounded-full bg-brand-500/30 blur-3xl" />
+        <div className="container-page relative flex flex-col items-center gap-6 py-10 text-center sm:py-12 md:flex-row md:gap-8 md:text-left">
+          <span className="grid size-24 shrink-0 place-items-center rounded-full bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 text-brand-950 shadow-xl shadow-gold-500/30 ring-8 ring-gold-400/20">
+            <Award className="size-12" aria-hidden />
+          </span>
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold-300">Quality Council of India</p>
+            <h2 id="qci-heading" className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+              {site.accreditation.full}
+            </h2>
+            <p className="mt-3 max-w-2xl leading-relaxed text-brand-100">
+              Certified by the Quality Council of India (QCI), the national body for quality standards — a mark of our
+              commitment to hygiene, patient safety and quality care.
+            </p>
+          </div>
+          <Link href="/contact#book" className="btn-gold shrink-0 md:ml-auto">
+            <CalendarCheck className="size-5" aria-hidden /> Book a visit
+          </Link>
+        </div>
       </section>
 
       {/* ───────── TREATMENTS ───────── */}
@@ -302,7 +337,7 @@ export default function HomePage() {
               View full gallery <ArrowRight className="size-4" aria-hidden />
             </Link>
           </div>
-          <ul className="snap-row mt-10">
+          <AutoScrollRow label="Before-and-after smile results" className="mt-10">
             {smileCases.slice(0, 8).map((c) => (
               <li key={c.src.src} className="w-72 shrink-0 sm:w-80">
                 <figure className="card overflow-hidden">
@@ -313,7 +348,7 @@ export default function HomePage() {
                 </figure>
               </li>
             ))}
-          </ul>
+          </AutoScrollRow>
         </div>
       </section>
 

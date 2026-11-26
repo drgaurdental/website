@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored Stageshow kit (third-party illustration library), kept as shipped.
+    "src/components/stageshow/**",
   ]),
 ]);
 

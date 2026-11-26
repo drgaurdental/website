@@ -127,12 +127,12 @@ export function Footer() {
 /** Sticky call / WhatsApp / book bar on phones — the fastest way for a patient to reach the clinic. */
 export function MobileActionBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-[0_-8px_30px_rgb(0_0_0/0.08)] backdrop-blur lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 pb-[max(env(safe-area-inset-bottom),0.5rem)] pt-2 shadow-bar backdrop-blur lg:hidden">
       <div className="grid grid-cols-3 gap-2">
         <a href={site.phoneHref} className="flex flex-col items-center gap-0.5 rounded-xl py-1.5 text-xs font-semibold text-brand-800 active:bg-brand-50">
           <Phone className="size-5" aria-hidden /> Call
         </a>
-        <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-0.5 rounded-xl py-1.5 text-xs font-semibold text-[#128C4B] active:bg-green-50">
+        <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-0.5 rounded-xl py-1.5 text-xs font-semibold text-whatsapp-700 active:bg-green-50">
           <WhatsAppIcon className="size-5" /> WhatsApp
         </a>
         <Link href="/contact#book" className="flex flex-col items-center gap-0.5 rounded-xl bg-brand-700 py-1.5 text-xs font-semibold text-white active:bg-brand-800">
@@ -160,7 +160,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-6 right-6 z-40 hidden size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 transition hover:scale-105 lg:grid"
+      className="fixed bottom-6 right-6 z-40 hidden size-14 place-items-center rounded-full bg-whatsapp-500 text-white shadow-xl shadow-whatsapp-500/30 transition hover:scale-105 lg:grid"
     >
       <WhatsAppIcon className="size-7" />
     </a>

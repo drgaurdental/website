@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, MapPin, Send, X } from "lucide-react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { ChevronLeft, ChevronRight, MapPin, Pause, Play, Send, X } from "lucide-react";
 import type { GalleryImage } from "@/lib/gallery";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -48,6 +48,118 @@ export function MapEmbed({ className = "" }: { className?: string }) {
   );
 }
 
+const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void) {
+  const mq = window.matchMedia(REDUCED_MOTION);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+function usePrefersReducedMotion() {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    () => window.matchMedia(REDUCED_MOTION).matches,
+    () => false,
+  );
+}
+
+/** How long autoplay waits after the visitor swipes, scrolls or clicks inside the row. */
+const RESUME_AFTER_MS = 6000;
+
+/**
+ * Horizontal snap row that advances one card at a time and loops back to the start.
+ * Pauses on hover, focus or touch, while off-screen or in a background tab, and is
+ * off for visitors who prefer reduced motion. Includes a pause/play button.
+ */
+export function AutoScrollRow({
+  children,
+  label,
+  interval = 3500,
+  className = "",
+}: {
+  children: React.ReactNode;
+  label: string;
+  interval?: number;
+  className?: string;
+}) {
+  const rowRef = useRef<HTMLUListElement>(null);
+  const holdRef = useRef(false);
+  const lastInteractionRef = useRef(0);
+  const [paused, setPaused] = useState(false);
+  const reducedMotion = usePrefersReducedMotion();
+  const playing = !paused && !reducedMotion;
+
+  useEffect(() => {
+    const row = rowRef.current;
+    if (!row || !playing) return;
+
+    let inView = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry?.isIntersecting ?? false;
+    }, { threshold: 0.3 });
+    observer.observe(row);
+
+    const timer = window.setInterval(() => {
+      const recentlyTouched = Date.now() - lastInteractionRef.current < RESUME_AFTER_MS;
+      if (!inView || holdRef.current || recentlyTouched || document.hidden) return;
+      const card = row.firstElementChild;
+      if (!(card instanceof HTMLElement)) return;
+      const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+      const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
+      row.scrollTo({ left: atEnd ? 0 : row.scrollLeft + card.offsetWidth + gap, behavior: "smooth" });
+    }, interval);
+
+    return () => {
+      window.clearInterval(timer);
+      observer.disconnect();
+    };
+  }, [playing, interval]);
+
+  const markInteraction = () => {
+    lastInteractionRef.current = Date.now();
+  };
+
+  return (
+    <div className={className}>
+      <ul
+        ref={rowRef}
+        aria-label={label}
+        className="snap-row"
+        onPointerEnter={(e) => {
+          if (e.pointerType === "mouse") holdRef.current = true;
+        }}
+        onPointerLeave={() => {
+          holdRef.current = false;
+        }}
+        onPointerDown={markInteraction}
+        onTouchStart={markInteraction}
+        onWheel={markInteraction}
+        onFocus={() => {
+          holdRef.current = true;
+        }}
+        onBlur={() => {
+          holdRef.current = false;
+        }}
+      >
+        {children}
+      </ul>
+      {!reducedMotion && (
+        <div className="mt-2 flex justify-end">
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            aria-label={paused ? "Play slideshow" : "Pause slideshow"}
+            className="grid size-10 place-items-center rounded-full border border-brand-200 bg-white text-brand-700 transition hover:bg-brand-50"
+          >
+            {paused ? <Play className="size-4" aria-hidden /> : <Pause className="size-4" aria-hidden />}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** Responsive image grid with an accessible lightbox. */
 export function GalleryGrid({ images, columns = "sm:grid-cols-2 lg:grid-cols-3" }: { images: GalleryImage[]; columns?: string }) {
   const [index, setIndex] = useState<number | null>(null);
@@ -65,14 +177,22 @@ export function GalleryGrid({ images, columns = "sm:grid-cols-2 lg:grid-cols-3" 
       if (e.key === "ArrowLeft") step(-1);
     };
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("overflow-hidden");
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
+      document.body.classList.remove("overflow-hidden");
     };
   }, [index, close, step]);
 
-  const current = index === null ? null : images[index];
+  const current = index === null ? null : (images[index] ?? null);
+
+  if (images.length === 0) {
+    return (
+      <p className="rounded-3xl border border-dashed border-brand-200 bg-brand-50 px-6 py-10 text-center text-sm text-slate-600">
+        Photos are coming soon.
+      </p>
+    );
+  }
 
   return (
     <>
@@ -84,13 +204,13 @@ export function GalleryGrid({ images, columns = "sm:grid-cols-2 lg:grid-cols-3" 
               onClick={() => setIndex(i)}
               className="group block w-full overflow-hidden rounded-3xl border border-slate-100 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
-              <span className="relative block aspect-[4/3] overflow-hidden bg-slate-100">
+              <span className="relative block aspect-4/3 overflow-hidden bg-slate-100">
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
                   sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  className={`object-cover transition duration-500 group-hover:scale-105 ${img.focus ?? ""}`}
                   placeholder="blur"
                 />
               </span>
@@ -105,7 +225,7 @@ export function GalleryGrid({ images, columns = "sm:grid-cols-2 lg:grid-cols-3" 
           role="dialog"
           aria-modal="true"
           aria-label={current.caption}
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-brand-950/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-60 flex items-center justify-center bg-brand-950/90 p-4 backdrop-blur-sm"
           onClick={close}
         >
           <button type="button" onClick={close} aria-label="Close" className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">

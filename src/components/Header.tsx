@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Clock, MapPin, Menu, Phone, X, CalendarCheck } from "lucide-react";
+import { BadgeCheck, ChevronDown, Clock, MapPin, Menu, Phone, X, CalendarCheck } from "lucide-react";
 import logoMark from "@/images/logo-mark.webp";
 import { site } from "@/lib/site";
 import type { IconName } from "@/lib/treatments";
@@ -34,9 +34,9 @@ export function Header({ treatments }: { treatments: NavTreatment[] }) {
   }
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.body.classList.toggle("overflow-hidden", mobileOpen);
     return () => {
-      document.body.style.overflow = "";
+      document.body.classList.remove("overflow-hidden");
     };
   }, [mobileOpen]);
 
@@ -69,11 +69,14 @@ export function Header({ treatments }: { treatments: NavTreatment[] }) {
             <span className="flex items-center gap-1.5">
               <MapPin className="size-3.5 text-gold-400" aria-hidden /> {site.address.locality}, {site.address.region}
             </span>
-            <span className="flex items-center gap-1.5">
+            <span className="hidden items-center gap-1.5 xl:flex">
               <Clock className="size-3.5 text-gold-400" aria-hidden /> {site.hours.slots.map((s) => s.label).join(" · ")}
             </span>
           </div>
           <div className="flex items-center gap-5">
+            <span className="flex items-center gap-1.5 font-semibold text-gold-300">
+              <BadgeCheck className="size-3.5" aria-hidden /> {site.accreditation.full}
+            </span>
             <span className="font-medium text-gold-300">24-hour emergency</span>
             <a href={site.phoneHref} className="flex items-center gap-1.5 font-semibold text-white hover:text-gold-300">
               <Phone className="size-3.5" aria-hidden /> {site.phone}
@@ -82,7 +85,7 @@ export function Header({ treatments }: { treatments: NavTreatment[] }) {
         </div>
       </div>
 
-      <div className="border-b border-slate-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
+      <div className="border-b border-slate-100 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/85">
         <nav aria-label="Main" className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
           <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} — home`}>
             <Image src={logoMark} alt="" width={44} height={44} priority className="size-10 object-contain lg:size-11" />

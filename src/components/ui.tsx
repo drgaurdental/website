@@ -41,7 +41,7 @@ export function TreatmentCard({ t }: { t: Treatment }) {
   return (
     <Link
       href={`/treatments/${t.slug}`}
-      className="group card relative flex h-full flex-col p-4 transition sm:p-6 duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_40px_rgb(59_10_79/0.12)]"
+      className="group card relative flex h-full flex-col p-4 transition sm:p-6 duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card-hover"
     >
       <span className="grid size-11 place-items-center rounded-2xl bg-brand-50 text-brand-700 transition group-hover:bg-brand-700 group-hover:text-white sm:size-14">
         <TreatmentIcon name={t.icon} className="size-6 sm:size-7" />

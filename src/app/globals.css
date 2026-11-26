@@ -25,6 +25,15 @@
   --color-mint-500: #14b88a;
   --color-mint-600: #0f9a73;
 
+  /* WhatsApp brand greens (button fill, hover, text on white) */
+  --color-whatsapp-500: #25d366;
+  --color-whatsapp-600: #1ebe5b;
+  --color-whatsapp-700: #128c4b;
+
+  --shadow-card: 0 8px 30px rgb(59 10 79 / 0.06);
+  --shadow-card-hover: 0 20px 40px rgb(59 10 79 / 0.12);
+  --shadow-bar: 0 -8px 30px rgb(0 0 0 / 0.08);
+
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-hindi: var(--font-devanagari), var(--font-jakarta), sans-serif;
 
@@ -91,10 +100,10 @@
   @apply btn border border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
 }
 @utility btn-whatsapp {
-  @apply btn bg-[#25D366] text-white shadow-lg shadow-[#25D366]/25 hover:bg-[#1ebe5b];
+  @apply btn bg-whatsapp-500 text-white shadow-lg shadow-whatsapp-500/25 hover:bg-whatsapp-600;
 }
 @utility card {
-  @apply rounded-3xl border border-slate-100 bg-white shadow-[0_8px_30px_rgb(59_10_79/0.06)];
+  @apply rounded-3xl border border-slate-100 bg-white shadow-card;
 }
 
 @layer components {
@@ -107,7 +116,7 @@
 
   /* Horizontal scroll rows with snap — no JS carousel needed */
   .snap-row {
-    @apply flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:thin];
+    @apply flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 scrollbar-thin;
   }
   .snap-row > * {
     @apply snap-start;

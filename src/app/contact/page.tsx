@@ -6,6 +6,7 @@ import { treatments } from "@/lib/treatments";
 import { PageHero } from "@/components/ui";
 import { BookingForm, MapEmbed } from "@/components/interactive";
 import { WhatsAppIcon } from "@/components/icons";
+import { BookingDemo } from "./_components/BookingDemo";
 
 export const metadata: Metadata = pageMeta({
   title: "Contact & Book an Appointment — Dentist in Behror",
@@ -62,6 +63,11 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-6">
+            <div>
+              <h2 className="text-xl font-bold">What happens after you send</h2>
+              <p className="mt-1 mb-4 text-slate-600">WhatsApp opens with your request filled in, and we reply to confirm your time.</p>
+              <BookingDemo />
+            </div>
             <div className="card p-6 sm:p-8">
               <h2 className="text-xl font-bold">Clinic details</h2>
               <address className="mt-5 space-y-4 not-italic text-slate-700">
