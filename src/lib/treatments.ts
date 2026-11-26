@@ -1,15 +1,14 @@
 import type { StaticImageData } from "next/image";
 import xray1 from "@/images/xrays/xray-1.webp";
 import zirconia from "@/images/cases/zirconia-missing-tooth.webp";
-import zirconiaCap from "@/images/cases/zirconia-capping.webp";
+import bridgeCase from "@/images/cases/lower-arch-bridge-crowns.webp";
 import smile1 from "@/images/cases/smile-1.webp";
 import smile12 from "@/images/cases/smile-12.webp";
-import impacted from "@/images/cases/impacted-molar-removal.webp";
-import smile2 from "@/images/cases/smile-2.webp";
-import smile9 from "@/images/cases/smile-9.webp";
-import smile3 from "@/images/cases/smile-3.webp";
+import extractionCase from "@/images/cases/third-molar-disimpaction.webp";
+import denturesCase from "@/images/cases/dentures-before-after.webp";
+import bracesCase from "@/images/cases/braces-impacted-canines.webp";
 import kids1 from "@/images/kids/kids-1.webp";
-import smile6 from "@/images/cases/smile-6.webp";
+import fillingCase from "@/images/cases/composite-filling-before-after.webp";
 
 export type IconName =
   | "root"
@@ -160,7 +159,7 @@ export const treatments: Treatment[] = [
       "Metal and ceramic braces in Behror by an MDS orthodontist. Straighten crooked teeth, close gaps and correct your bite at Dr. Gaur Dental Hospital.",
     short: "Straighten teeth and correct bite problems with metal or ceramic braces.",
     icon: "braces",
-    image: { src: smile3, alt: "X-ray and photo of crowded teeth before orthodontic treatment" },
+    image: { src: bracesCase, alt: "Before and after braces treatment of impacted canines in a young patient, with X-ray" },
     intro: [
       "Braces gently move teeth into the right position over time. They correct crowded or crooked teeth, gaps, protruding front teeth and bite problems — improving both your smile and how your teeth work together.",
       "Orthodontic treatment at our clinic is planned by Dr. Gaurav Arya, MDS (Orthodontics), Assistant Professor at NIMS University, Jaipur.",
@@ -338,7 +337,7 @@ export const treatments: Treatment[] = [
       "Gentle, painless tooth extraction and impacted wisdom tooth surgery in Behror. Experienced dentists at Dr. Gaur Dental Hospital.",
     short: "Gentle removal of damaged or impacted teeth, including wisdom teeth.",
     icon: "extract",
-    image: { src: impacted, alt: "Removal of a horizontally impacted lower molar" },
+    image: { src: extractionCase, alt: "Impacted lower wisdom tooth: X-ray, surgical removal, stitches and the extracted tooth" },
     intro: [
       "Sometimes a tooth is too damaged to save, or a wisdom tooth is stuck (impacted) and causing pain, swelling or infection. In these cases a careful extraction is the best option.",
       "We use effective local anaesthesia and gentle techniques — from simple extractions to surgical removal of horizontally impacted wisdom teeth — to keep you comfortable and help you heal quickly.",
@@ -386,7 +385,7 @@ export const treatments: Treatment[] = [
       "Comfortable, custom-fit complete and partial dentures in Behror to restore missing teeth, chewing and confidence. Dr. Gaur Dental Hospital.",
     short: "Custom-fit removable teeth to restore chewing and your smile.",
     icon: "denture",
-    image: { src: smile2, alt: "Before and after photos of an elderly patient's missing teeth being replaced" },
+    image: { src: denturesCase, alt: "Before and after dentures: an elderly patient with no teeth, then smiling with complete dentures" },
     intro: [
       "Dentures are removable replacements for missing teeth. Complete dentures replace all the teeth in a jaw, while partial dentures fill gaps when some natural teeth remain.",
       "Each denture is custom-made from impressions of your mouth so it fits comfortably and looks natural.",
@@ -424,7 +423,6 @@ export const treatments: Treatment[] = [
       "Safe, professional teeth whitening in Behror to brighten stained or yellow teeth. Dentist-supervised whitening at Dr. Gaur Dental Hospital.",
     short: "Safely brighten yellow or stained teeth under dental supervision.",
     icon: "whiten",
-    image: { src: smile9, alt: "Before and after photos of discoloured front teeth" },
     intro: [
       "Professional teeth whitening uses dentist-supervised whitening agents to lighten the natural colour of your teeth — safely and more effectively than over-the-counter products.",
       "We first check your teeth and gums, and clean them if needed, so whitening works evenly and comfortably.",
@@ -462,7 +460,7 @@ export const treatments: Treatment[] = [
       "Natural-looking zirconia and ceramic dental crowns (caps) and bridges in Behror to restore broken, root-canal-treated or missing teeth. Dr. Gaur Dental Hospital.",
     short: "Strong, natural-looking caps and bridges for damaged or missing teeth.",
     icon: "crown",
-    image: { src: zirconiaCap, alt: "Before and after photos of zirconia capping on front teeth" },
+    image: { src: bridgeCase, alt: "Before and after photos of a full lower-arch bridge replacing decayed and missing teeth" },
     intro: [
       "A crown (cap) covers and protects a damaged tooth, restoring its strength and appearance. A bridge uses crowns on neighbouring teeth to hold a replacement tooth and fill a gap.",
       "We offer metal-free zirconia and ceramic crowns that are strong and closely match the colour of your natural teeth.",
@@ -505,7 +503,7 @@ export const treatments: Treatment[] = [
       "Treat cavities with durable, tooth-coloured composite fillings in Behror. Early, painless cavity treatment at Dr. Gaur Dental Hospital.",
     short: "Repair cavities with durable fillings that match your teeth.",
     icon: "filling",
-    image: { src: smile6, alt: "Before and after photos of restored front teeth" },
+    image: { src: fillingCase, alt: "Before and after tooth-coloured composite restoration closing a gap between front teeth" },
     intro: [
       "A filling repairs a tooth damaged by decay. We remove the decayed part and rebuild the tooth with a tooth-coloured composite material that bonds to it and blends in naturally.",
       "Treating cavities early is quick and comfortable — and prevents the need for a root canal later.",
